@@ -9,9 +9,6 @@ zabbix_export:
       uuid: 23c72497b8d646ad90bf7a0740e0c186
       template: 'Synology DiskStation'
       name: 'Synology DiskStation SNMPv3'
-      templates:
-        -
-          name: 'ICMP Ping'
       groups:
         -
           name: Templates
@@ -186,12 +183,12 @@ zabbix_export:
           triggers:
             -
               uuid: 241feffeef524050922fbfb4e6d1cbef
-              expression: 'avg(/Synology DiskStation/synoSystem.ssCpuIdle,5m)<30'
+              expression: 'avg(/Synology DiskStation/synoSystem.ssCpuIdle,5m)<{$CPU_UTIL_WARN}'
               name: 'CPU Usage High on {HOST.NAME}'
               priority: WARNING
             -
               uuid: e8f011cb5264499eb17fadb8330bf707
-              expression: 'avg(/Synology DiskStation/synoSystem.ssCpuIdle,5m)<10'
+              expression: 'avg(/Synology DiskStation/synoSystem.ssCpuIdle,5m)<{$CPU_UTIL_HIGH}'
               name: 'CPU Usage Very High on {HOST.NAME}'
               priority: HIGH
         -
@@ -529,7 +526,7 @@ zabbix_export:
               key: 'host.hrStorage.hrStorageTable.hrStorageEntry.hrStorageSize[{#IFINDEX}]'
               delay: 3m
               units: B
-              description: 'The size of the storage represented by this entry, in units of hrStorageAllocationUnits.'
+              description: 'The size of the storage represented by this entry.'
               preprocessing:
                 -
                   type: MULTIPLIER
@@ -1341,6 +1338,12 @@ zabbix_export:
                   priority: AVERAGE
                   description: 'Degrade is shown when a tolerable failure of disk(s) occurs.'
       macros:
+        -
+          macro: '{$CPU_UTIL_HIGH}'
+          value: '10'
+        -
+          macro: '{$CPU_UTIL_WARN}'
+          value: '25'
         -
           macro: '{$DISK_UTIL_HIGH}'
           value: '90'

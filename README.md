@@ -2,9 +2,6 @@
 
 ## A place for community driven integrations with Zabbix
 
-![Template Repository](https://github.com/zabbix/community-templates/actions/workflows/update_readme.yml/badge.svg)
-![Template Repository](https://github.com/zabbix/community-templates/actions/workflows/check_templates.yaml/badge.svg)
-
 This repository is dedicated to templates that are created and maintained by Zabbix community.
 
 ## How to use templates from this repository?
@@ -19,11 +16,10 @@ This repository is dedicated to templates that are created and maintained by Zab
 - Answer questions and discuss in GitHub issues
 
 ## How to contribute a new template
-- Read [template guidelines](https://www.zabbix.com/documentation/guidelines/en/thosts)
+- Read [template guidelines](https://www.zabbix.com/documentation/guidelines/en/thosts/community_templates)
 - Review template structure
 - Open a pull request with a template for the correct version
 - Be ready to discuss your pull request
-
 
 ## Templates
 * [Applications](Applications)
@@ -50,7 +46,8 @@ This repository is dedicated to templates that are created and maintained by Zab
     * [Clustered_File_Systems](Applications/Clustered_File_Systems)
         * [Gluster Storage](Applications/Clustered_File_Systems/template_glusterfs_discovery)
     * [DNS](Applications/DNS)
-        * [App PowerDNS dnsdist](Applications/DNS/template_app_powerdns_dnsdist)
+        * [PowerDNS dnsdist](Applications/DNS/template_app_powerdns_dnsdist)
+        * [PowerDNS Authoritative Server](Applications/DNS/template_app_powerdns_auth)
         * [Bind queries](Applications/DNS/template_bind_recursive_queries)
         * [DNS-bind](Applications/DNS/template_bind_stat)
         * [Knot Resolver Statistics](Applications/DNS/template_knot_resolver)
@@ -81,6 +78,7 @@ This repository is dedicated to templates that are created and maintained by Zab
         * [App Axigen-Services](Applications/Mail_servers/template_monitor_axigen_with_zabbix)
         * [Zimbra](Applications/Mail_servers/template_zimbra_collaboration)
         * [Zimbra](Applications/Mail_servers/template_zimbra_zmcontrol_status)
+        * [Stalwart](Applications/Mail_servers/template_stalwart)
     * [Misc](Applications/Misc)
         * [App Skype for business Mediation Role](Applications/Misc/template_lync_2013_mediation_role)
     * [Monitoring_System](Applications/Monitoring_System)
@@ -105,6 +103,7 @@ This repository is dedicated to templates that are created and maintained by Zab
         * [OKTA AD Agent Healthcheck](Applications/Others/template_okta_ad_agent_status)
         * [OpenVPN](Applications/Others/template_openvpn_for_thevpncompany)
         * [SAP Availability Linux](Applications/Others/template_sap_process)
+        * [SAP Host Agent](Applications/Others/template_sap_host_agent)
         * [App TACACS Service](Applications/Others/template_tacacs_service)
         * [App WireGuard](Applications/Others/template_wireguard_vpn)
         * [App Zookeeper](Applications/Others/template_zabbix_zookeper)
@@ -184,13 +183,14 @@ This repository is dedicated to templates that are created and maintained by Zab
     * [Others](Databases/Others)
         * [App Elasticsearch Cluster by Zabbix agent](Databases/Others/template_app_elasticsearch_cluster_by_zabbix_agent)
         * [Clickhouse](Databases/Others/template_clickhouse)
-        * [MaxDB DBMMonitor](Databases/Others/template_sap_maxdb79_monitor)
     * [Sinal SFP Mikrotik](Databases/template_coleta_sinal_sfp_mikrotik)
     * [Elasticsearch Cluster by HTTP zbx 4.2](Databases/template_elasticsearch_cluster_by_http_for_zabbix_4.2+)
     * [Template App Patroni Cluster monitoring by HTTP](Databases/template_patroni)
     * [Postgres ODBC](Databases/template_postgres_odbc_database_monitoring)
     * [Banco Progress Datasul](Databases/template_progress_datasul_totvs)
     * [App Nutcracker](Databases/template_twemproxy_(nutcracker))
+* [NVRs](NVRs)
+    * [Hikvision NVR](NVRs/template_hikvision_nvr)
 * [Network_Appliances](Network_Appliances)
     * [BALABIT-SNMPv2-Shell_Control_Box](Network_Appliances/template_balabit-shell_control_box_snmp)
     * [Device BigIP F5](Network_Appliances/template_big_ip_f5-snmp)
@@ -493,10 +493,10 @@ This repository is dedicated to templates that are created and maintained by Zab
         * [Template Module Zypper updateinfo by Zabbix trapper](Operating_Systems/Linux/template_zypper_updateinfo)
     * [Mac_OS](Operating_Systems/Mac_OS)
         * [macOS Content Cache](Operating_Systems/Mac_OS/template_macos_content_caching)
-    * [VMWare](Operating_Systems/VMWare)
-        * [ESXi HP Smart Array](Operating_Systems/VMWare/template_esxi_hp_smart_array_monitoring)
-        * [SNMP OS ESXi](Operating_Systems/VMWare/template_esxi_snmp_only_for_zabbix3.0)
-        * [SNMP OS ESXi](Operating_Systems/VMWare/template_esxi_snmp_ver_3.4)
+    * [VMware](Operating_Systems/VMware)
+        * [ESXi HP Smart Array](Operating_Systems/VMware/template_esxi_hp_smart_array_monitoring)
+        * [SNMP OS ESXi](Operating_Systems/VMware/template_esxi_snmp_only_for_zabbix3.0)
+        * [SNMP OS ESXi](Operating_Systems/VMware/template_esxi_snmp_ver_3.4)
     * [Windows](Operating_Systems/Windows)
         * [AD DS Health and Performance](Operating_Systems/Windows/template_ad_ds_health_and_performance)
         * [AD DS Monitoring and Attack Detection](Operating_Systems/Windows/template_ad_ds_monitoring_and_attack_detection)
@@ -625,6 +625,9 @@ This repository is dedicated to templates that are created and maintained by Zab
     * [Vertiv](Power_(UPS)/template_vertiv_2)
     * [Vertiv](Power_(UPS)/template_vertiv_3)
     * [Vertiv](Power_(UPS)/template_vertiv_4)
+* [Power_Inverter](Power_Inverter/)
+  * [APsystems](Power_Inverter/APsystems)
+    * [EZ1-M1](Power_Inverter/APsystems/template_ez1-m1/)
 * [Printers](Printers)
     * [Brother](Printers/Brother)
         * [Brother Printers](Printers/Brother/template_brother_mfc-l2700dw)
@@ -962,7 +965,6 @@ This repository is dedicated to templates that are created and maintained by Zab
     * [DEVA SmartGen 6](Unsorted/template_deva_smartgen_6)
     * [Octopus NET DD Bridge satelite mon](Unsorted/template_digital_devices_octopus_net)
     * [1wire-temperature-probe](Unsorted/template_ds18b20_&_raspberrypi_(1wire))
-    * [Hikvision](Unsorted/template_hikvision_nvr)
     * [Security Cameras - HikVision](Unsorted/template_improved_hikvision_camera)
     * [iNode-Sense](Unsorted/template_inode_psense_in_russian)
     * [Monitoring MCS](Unsorted/template_mcs_hp)

@@ -10,7 +10,7 @@ LVM Cache monitoring template.
 ==============================
 
 
- allows you to evaluate the efficiency of caching by the built-in dm-cache mechanism.
+ Allows you to evaluate the efficiency of caching by the built-in dm-cache mechanism.
 
 
 **What do these values mean?**
@@ -74,6 +74,7 @@ There are no discovery rules in this template.
 |total_metadata_blocks|<p>-</p>|`Dependent item`|lvmcache.total_metadata_blocks<p>Update: 0</p>|
 |total_cache_blocks|<p>-</p>|`Dependent item`|lvmcache.total_cache_blocks<p>Update: 0</p>|
 |read_hits|<p>-</p>|`Dependent item`|lvmcache.read_hits<p>Update: 0</p>|
+|read_misses|<p>-</p>|`Dependent item`|lvmcache.read_misses<p>Update: 0</p>|
 |promotions|<p>-</p>|`Dependent item`|lvmcache.promotions<p>Update: 0</p>|
 |lvm raw data|<p>-</p>|`Zabbix agent`|lvmcache.raw<p>Update: 3m</p>|
 |write_hits|<p>-</p>|`Dependent item`|lvmcache.write_hits<p>Update: 0</p>|
